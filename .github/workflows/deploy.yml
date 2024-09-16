@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - v4
-  repository_dispatch:
-    types: [trigger-action]
 
 permissions:
   contents: read
@@ -23,7 +21,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for git info
-          submodules: "true"
       - uses: actions/setup-node@v4
         with:
           node-version: 22
