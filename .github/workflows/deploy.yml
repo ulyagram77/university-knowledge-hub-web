@@ -24,7 +24,9 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for git info
       - name: Clone content
-        run: git clone https://github.com/ulyagram77/university-knowledge-hub content
+        run: |
+          git clone https://github.com/ulyagram77/university-knowledge-hub content
+          mv content/README.md content/index.md
       - uses: actions/setup-node@v4
         with:
           node-version: 22
