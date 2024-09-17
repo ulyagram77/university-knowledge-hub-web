@@ -167,7 +167,7 @@ export function resolveRelative(current: FullSlug, target: FullSlug | SimpleSlug
 }
 
 export function resolveAbsolute(current: FullSlug, target: FullSlug | SimpleSlug): RelativeURL {
-  const root = "https://ulyagram77.github.io/university-knowledge-hub-web"
+  const root = "university-knowledge-hub-web"
   const res = joinSegments(root, simplifySlug(target as FullSlug)) as RelativeURL
   return res
 }
