@@ -2,7 +2,7 @@
 import { QuartzPluginData } from "../plugins/vfile"
 import {
   joinSegments,
-  resolveRelative,
+  resolveAbsolute,
   clone,
   simplifySlug,
   SimpleSlug,
@@ -169,14 +169,14 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
 
   // Calculate current folderPath
   const folderPath = node.name !== "" ? joinSegments(fullPath ?? "", node.name) : ""
-  const href = resolveRelative(fileData.slug!, folderPath as SimpleSlug) + "/"
+  const href = resolveAbsolute(fileData.slug!, folderPath as SimpleSlug) + "/"
 
   return (
     <>
       {node.file ? (
         // Single file node
         <li key={node.file.slug}>
-          <a href={resolveRelative(fileData.slug!, node.file.slug!)} data-for={node.file.slug}>
+          <a href={resolveAbsolute(fileData.slug!, node.file.slug!)} data-for={node.file.slug}>
             {node.displayName}
           </a>
         </li>
