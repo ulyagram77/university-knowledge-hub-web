@@ -167,9 +167,9 @@ export function resolveRelative(current: FullSlug, target: FullSlug | SimpleSlug
 }
 
 export function resolveAbsolute(current: FullSlug, target: FullSlug | SimpleSlug): RelativeURL {
-  const root = "university-knowledge-hub-web"
-  const res = joinSegments(root, simplifySlug(target as FullSlug)) as RelativeURL
-  return res
+  const res = joinSegments("", simplifySlug(target as FullSlug)) as RelativeURL
+  const root = "https://ulyagram77.github.io/university-knowledge-hub-web/"
+  return root + res as RelativeURL
 }
 
 export function splitAnchor(link: string): [string, string] {
